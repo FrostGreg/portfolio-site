@@ -1,0 +1,78 @@
+:root {
+    --black: #5C4B51;
+    --blue: #8CBEB2;
+    --white: #F2EBBF;
+    --orange: #F3B562;
+    --red: #F06060;
+    --font-size: 1.3rem;
+    --karla: "Karla", sans-serif ;
+    --inconsolata: "Inconsolata";
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--inconsolata);
+    font-size: var(--font-size);
+    background-color: var(--black);
+    color: var(--white);
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    color: var(--orange);
+}
+
+a:hover {
+    color: var(--red);
+}
+
+#intro {
+    padding-bottom: 10rem;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#intro name {
+    font-family: var(--karla);
+    font-size: 1rem;
+}
+
+.name span {
+    font-family: var(--inconsolata);
+    font-size: 4rem;
+    color: var(--blue);
+    display: block;
+    font-weight: 300;
+}
+
+#intro h2 {
+    font-size: 4rem;
+}
+
+#contact {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+#contact p:last-child {
+    margin-top: 3rem;
+}
