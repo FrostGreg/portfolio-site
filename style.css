@@ -19,6 +19,8 @@ html {
     box-sizing: inherit;
 }
 
+/* Generic page styles */
+
 body {
     padding: 0;
     margin: 0;
@@ -40,6 +42,8 @@ a:hover {
     color: var(--red);
     text-decoration: none;
 }
+
+/* Intro section */
 
 #intro {
     padding-bottom: 10rem;
@@ -67,6 +71,8 @@ a:hover {
     font-size: 4rem;
 }
 
+/* Contact section */
+
 #contact {
     width: 400px;
     text-align: center;
@@ -77,6 +83,8 @@ a:hover {
 #contact p:last-child {
     margin-top: 3rem;
 }
+
+/* Navigation section */
 
 nav {
     font-size: 80%;
@@ -147,4 +155,22 @@ nav [class*="fa-"]:hover {
         text-align: left;
         margin-right: auto;
     }
+}
+
+/* Footer section */
+
+footer {
+    text-align: center;
+}
+
+
+footer ul {
+    margin: 2rem 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 3rem;
 }
