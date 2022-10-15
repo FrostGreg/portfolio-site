@@ -38,6 +38,7 @@ a {
 
 a:hover {
     color: var(--red);
+    text-decoration: none;
 }
 
 #intro {
@@ -75,4 +76,75 @@ a:hover {
 
 #contact p:last-child {
     margin-top: 3rem;
+}
+
+nav {
+    font-size: 80%;
+    padding: 1rem;
+    font-family: var(--inconsolata);
+}
+
+nav h1 a {
+    font-family: var(--karla);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--blue);
+}
+
+nav h1 [class*="fa-"] {
+    font-size: 100%;
+    color: var(--blue);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+    color: var(--red);
+}
+
+.button {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
 }
