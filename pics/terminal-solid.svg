@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 512" style="enable-background:new 0 0 640 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#8CBEB2;}
+</style>
+<path class="st0" d="M41.4,86.6c-12.5-12.5-12.5-32.8,0-45.3s32.8-12.5,45.3,0l192,192c12.5,12.5,12.5,32.8,0,45.3l-192,192
+	c-12.5,12.5-32.8,12.5-45.3,0s-12.5-32.8,0-45.3L210.7,256L41.4,86.6z M288,416h288c17.7,0,32,14.3,32,32s-14.3,32-32,32H288
+	c-17.7,0-32-14.3-32-32S270.3,416,288,416z"/>
+</svg>
