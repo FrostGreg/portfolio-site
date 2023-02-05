@@ -1,10 +1,19 @@
 AOS.init({
-  offset: 200,
   duration: 600,
   easing: "ease-in-sine",
   delay: 500,
   useClassNames: false,
+  once: true,
 });
+
+for (const section of Array.from(document.getElementById("frame").children)) {
+  let prevDelay = 0;
+  for (const element of Array.from(section.children)) {
+    element.setAttribute("data-aos", "fade-up");
+    element.setAttribute("data-aos-delay", `${(prevDelay += 50)}`);
+  }
+}
+AOS.refreshHard();
 
 // Toggle burger menu
 document.getElementById("hamburger-button").addEventListener("click", () => {
