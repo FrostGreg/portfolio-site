@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-rgb: 34, 40, 49;
+  --grey: 57, 62, 70;
+  --orange: 214, 90, 49;
+  --white: 238, 238, 238;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  background: rgb(var(--background-rgb));
+  counter-reset: section;
+  display: flex;
+}
+
+.orange-text {
+  color: rgb(var(--orange));
+}
+
+.white-text {
+  color: rgb(var(--white));
+}
+
+.grey-text {
+  color: rgb(var(--grey));
+}
+
+.large-text {
+  font-size: 4rem;
+}
+
+header {
+  margin-top: 45vh;
+  margin-left: 9.6vw;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+header p {
+  font-size: 1.5rem;
+}
+
+nav {
+  width: 20vw;
+}
+
+ul {
+  color: rgb(var(--grey));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+ul li {
+  height: 100%;
+  width: 100%;
+  border-left: 0.15rem solid rgb(var(--grey));
+  transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
+}
+
+ul li button {
+  height: 100%;
+  width: 100%;
+}
+
+ul li a {
+  text-align: center;
+}
+
+.active {
+  color: rgb(var(--white));
+  border-color: rgb(var(--white));
+}
+
+#content {
+  margin-top: 45vh;
+  margin-right: 9.6vw;
+  width: 40vw;
+}
