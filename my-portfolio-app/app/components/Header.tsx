@@ -1,50 +1,58 @@
-"use client";
+import { Dispatch, SetStateAction } from "react";
+import { Montserrat } from "next/font/google";
+import { ContentTypes } from "../page";
 
-import { useState } from "react";
+const montserrat = Montserrat({ subsets: ["latin"] });
 
-export const Header = () => {
-  const [activeButton, setActiveButton] = useState(0);
-
+export const Header = ({
+  activeTab,
+  setActiveTab,
+}: {
+  activeTab: ContentTypes;
+  setActiveTab: Dispatch<SetStateAction<ContentTypes>>;
+}) => {
   return (
-    <header>
+    <header className={montserrat.className}>
       <div>
         <p className="orange-text">Hi my name is,</p>
         <h1 className="white-text large-text">Gregory Frost</h1>
-        <p className="grey-text large-text">I write code.</p>
+        <p className="grey-text large-text bold-text inner-shadow">
+          I write code.
+        </p>
       </div>
-      <nav>
+      <nav className="nav">
         <ul>
-          <li className={activeButton === 0 ? "active" : ""}>
+          <li className={activeTab === "About" ? "active" : ""}>
             <button
               onClick={() => {
-                setActiveButton(0);
+                setActiveTab("About");
               }}
             >
               <a>About me</a>
             </button>
           </li>
-          <li className={activeButton === 1 ? "active" : ""}>
+          <li className={activeTab === "Experience" ? "active" : ""}>
             <button
               onClick={() => {
-                setActiveButton(1);
+                setActiveTab("Experience");
               }}
             >
-              <a>Where I've worked</a>
+              <a>Where I&apos;ve worked</a>
             </button>
           </li>
-          <li className={activeButton === 2 ? "active" : ""}>
+          <li className={activeTab === "Projects" ? "active" : ""}>
             <button
               onClick={() => {
-                setActiveButton(2);
+                setActiveTab("Projects");
               }}
             >
-              <a>Things I've built</a>
+              <a>Things I&apos;ve built</a>
             </button>
           </li>
-          <li className={activeButton === 3 ? "active" : ""}>
+          <li className={activeTab === "Contact" ? "active" : ""}>
             <button
               onClick={() => {
-                setActiveButton(3);
+                setActiveTab("Contact");
               }}
             >
               <a>Get in touch</a>

@@ -1,3 +1,7 @@
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
+
 type LinkProp = {
   href: string;
   children: JSX.Element | string;
@@ -14,7 +18,7 @@ const Link = ({ href, children }: LinkProp) => {
 const AboutContent = () => {
   return (
     <>
-      <p>
+      <p className="pb-10">
         Hi! My name is Gregory, and I'm a computer science student at the{" "}
         <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
           University of Nottingham
@@ -26,12 +30,12 @@ const AboutContent = () => {
         as a web developer, where I've been working with technologies like
         React, TypeScript, and Node.
       </p>
-      <p>
+      <p className="pb-10">
         I'm a lifelong learner and I'm always on the lookout for new
         technologies and techniques to improve my skills. I love the fast-paced
         nature of web development and the constant challenges it presents.
       </p>
-      <p>
+      <p className="pb-10">
         Recently, I've been brushing up my web development skills by taking
         courses from{" "}
         <Link href="https://frontendmasters.com/">FrontEndMasters</Link>, one of
@@ -43,11 +47,11 @@ const AboutContent = () => {
         convenience of Github sign in.
       </p>
       <p>Here are a few technologies I've been working with recently:</p>
-      <ul>
+      <ul className={`pt-10 ${montserrat.className} list`}>
         <li>Javascript (ES6+)</li>
         <li>React</li>
-        <li>Node.js</li>
-        <li>TypeScript</li>
+        <li className="py-2">Node.js</li>
+        <li className="py-2">TypeScript</li>
         <li>Styled Components</li>
         <li>Cypress</li>
       </ul>

@@ -2,8 +2,20 @@ import AboutContent from "./AboutContent";
 import ExperienceContent from "./ExperienceContent";
 import ProjectsContent from "./ProjectsContent";
 import ContactContent from "./ContactContent";
+import { ContentTypes } from "../page";
 
-type ContentTypes = "About" | "Experience" | "Projects" | "Contact";
+const ContentSwitch = (displayContent: ContentTypes) => {
+  switch (displayContent) {
+    case "About":
+      return <AboutContent />;
+    case "Experience":
+      return <ExperienceContent />;
+    case "Projects":
+      return <ProjectsContent />;
+    case "Contact":
+      return <ContactContent />;
+  }
+};
 
 type ContentProps = {
   displayContent: ContentTypes;
@@ -11,8 +23,8 @@ type ContentProps = {
 
 export const Content = ({ displayContent }: ContentProps) => {
   return (
-    <div id="content">
-      <AboutContent />
+    <div id="content" className="pb-24">
+      {ContentSwitch(displayContent)}
     </div>
   );
 };
