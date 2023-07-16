@@ -254,8 +254,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
   filter: brightness(150%);
+  text-decoration: none;
 }
 
 button:hover {
