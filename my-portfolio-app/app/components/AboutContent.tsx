@@ -18,8 +18,9 @@ const Link = ({ href, children }: LinkProp) => {
 const AboutContent = () => {
   return (
     <>
-      <p className="pb-10">
-        Hi! My name is Gregory, and I&apos;m a computer science student at the{" "}
+      <p className="pb-6">
+        Hey there!<span aria-hidden>👋🏻</span> My name is Gregory, and I&apos;m a
+        computer science student at the{" "}
         <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
           University of Nottingham
         </Link>
@@ -30,12 +31,22 @@ const AboutContent = () => {
         as a web developer, where I&apos;ve been working with technologies like
         React, TypeScript, and Node.
       </p>
-      <p className="pb-10">
-        I&apos;m a lifelong learner and I&apos;m always on the lookout for new
-        technologies and techniques to improve my skills. I love the fast-paced
-        nature of web development and the constant challenges it presents.
-      </p>
-      <p className="pb-10">
+      <p className="pb-6">Some quick fire interests of mine:</p>
+      <ul className="pb-6 grid columns-2 emoji-list">
+        <li className="col-start-1">
+          <span aria-hidden>🌋</span> LOTR fan
+        </li>
+        <li className="col-start-2">
+          <span aria-hidden>🎧</span> Audiophile
+        </li>
+        <li className="col-start-1">
+          <span aria-hidden>🕹️</span> I like video games
+        </li>
+        <li className="col-start-2">
+          <span aria-hidden>⌚</span> Watch enthusiast
+        </li>
+      </ul>
+      <p className="pb-6">
         Recently, I&apos;ve been brushing up my web development skills by taking
         courses from{" "}
         <Link href="https://frontendmasters.com/">FrontEndMasters</Link>, one of
@@ -47,7 +58,7 @@ const AboutContent = () => {
         convenience of Github sign in.
       </p>
       <p>Here are a few technologies I&apos;ve been working with recently:</p>
-      <ul className={`pt-10 ${montserrat.className} list`}>
+      <ul className={`pt-6 ${montserrat.className} list`}>
         <li>Javascript (ES6+)</li>
         <li>React</li>
         <li className="py-2">Node.js</li>

@@ -17,7 +17,7 @@ export const Header = ({
         <p className="orange-text">Hi my name is,</p>
         <h1 className="white-text large-text">Gregory Frost</h1>
         <p className="grey-text large-text bold-text inner-shadow">
-          I write code.
+          I write code. 🐐
         </p>
       </div>
       <nav className="nav">

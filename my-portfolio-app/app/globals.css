@@ -27,7 +27,7 @@ body {
   display: flex;
   color: rgb(var(--blue-grey));
   font-size: 1.125rem;
-  padding: 36vh 9.6vw 0vh 9.6vw;
+  padding: 33vh 9.6vw 0vh 9.6vw;
   box-shadow: 0px 0px 159px 25px rgba(29, 12, 25, 0.45) inset;
   height: 100vh;
   width: 100vw;
@@ -67,7 +67,6 @@ body {
 
 header {
   width: 60vw;
-  max-height: 15rem;
   display: flex;
   justify-content: space-evenly;
 }
@@ -114,6 +113,14 @@ header ul li button {
 #content {
   max-width: 35vw;
   line-height: 1.5rem;
+}
+
+.emoji-list {
+  line-height: 2.5rem;
+}
+
+.emoji-list li span {
+  font-size: 2rem;
 }
 
 .list {
@@ -223,7 +230,7 @@ header ul li button {
 
 .project-image-wrapper {
   border-spacing: 1rem;
-  background-color: rgba(var(--orange), 0.2);
+  background-color: rgba(var(--orange), 0.4);
   grid-column-start: 1;
   grid-column-end: 8;
   grid-row-start: 1;
@@ -238,7 +245,7 @@ header ul li button {
 .project-image {
   border-radius: 0.25rem;
   opacity: 0.3;
-  filter: grayscale(90%) contrast(1) brightness(0.5);
+  filter: grayscale(80%) contrast(1) brightness(0.5);
   object-fit: cover;
 }
 
