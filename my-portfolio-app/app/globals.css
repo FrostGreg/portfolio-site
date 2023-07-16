@@ -20,8 +20,8 @@ body {
   counter-reset: section;
   display: flex;
   color: rgb(var(--blue-grey));
-  font-size: 1.25rem;
-  padding: 35vh 10vw 0vh 10vw;
+  font-size: 1.125rem;
+  padding: 36vh 9.6vw 0vh 9.6vw;
   /* box-shadow: 0px 0px 159px 25px rgba(12, 19, 29, 0.25) inset; */
 }
 
@@ -57,7 +57,7 @@ header {
   width: 60vw;
   max-height: 15rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 header p {
@@ -65,7 +65,8 @@ header p {
 }
 
 nav {
-  width: 15vw;
+  width: 10vw;
+  height: 28vh;
 }
 
 header ul {
@@ -79,6 +80,7 @@ header ul {
 
 header ul li {
   height: 100%;
+  min-height: 75px;
   width: 100%;
   border-left: 0.15rem solid rgb(var(--grey));
   transition: border 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
@@ -92,6 +94,7 @@ header ul li button {
 
 header ul li a {
   text-align: center;
+  font-size: 1rem;
 }
 
 .active {
@@ -100,7 +103,7 @@ header ul li a {
 }
 
 #content {
-  width: 40vw;
+  max-width: 35vw;
   line-height: 1.5rem;
 }
 
@@ -179,4 +182,47 @@ header ul li a {
   border: 0.135rem rgb(var(--orange)) solid;
   border-radius: 4px;
   font-size: 0.8125rem;
+}
+
+.project-title {
+  color: rgb(var(--white));
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-indicator {
+  border: 0.8rem solid rgb(var(--grey));
+  border-radius: 0.8rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 1rem;
+}
+
+.project-active {
+  border: 0.8rem solid rgb(var(--white));
+  border-radius: 0.8rem;
+  margin: 1rem;
+}
+
+.project-description {
+  text-align: right;
+  background-color: rgb(var(--grey));
+  border-radius: 4px;
+  padding: 25px;
+  margin: 2rem 0rem 2rem 0rem;
+}
+
+.project-image-wrapper {
+  background-color: rgba(var(--orange), 0.3);
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.project-image {
+  border-radius: 0.25rem;
+  opacity: 0.3;
+  filter: grayscale(100%) contrast(1) brightness(0.5);
 }

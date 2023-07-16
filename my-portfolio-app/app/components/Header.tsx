@@ -13,7 +13,7 @@ export const Header = ({
 }) => {
   return (
     <header className={montserrat.className}>
-      <div>
+      <div className="mt-20">
         <p className="orange-text">Hi my name is,</p>
         <h1 className="white-text large-text">Gregory Frost</h1>
         <p className="grey-text large-text bold-text inner-shadow">

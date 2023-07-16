@@ -12,7 +12,7 @@ const ExperienceContent = () => {
       <ul className="horizontal-nav">
         <li className={tabNumber === 0 ? "horizontal-nav-active" : ""}>
           <button
-            className={`px-20 py-3 ${montserrat.className}`}
+            className={`px-20 py-3 w-full ${montserrat.className}`}
             onClick={() => {
               setTabNumber(0);
             }}
@@ -22,7 +22,7 @@ const ExperienceContent = () => {
         </li>
         <li className={tabNumber === 1 ? "horizontal-nav-active" : ""}>
           <button
-            className={`px-20 py-3 ${montserrat.className}`}
+            className={`px-20 py-3 w-full ${montserrat.className}`}
             onClick={() => {
               setTabNumber(1);
             }}

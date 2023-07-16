@@ -22,9 +22,5 @@ type ContentProps = {
 };
 
 export const Content = ({ displayContent }: ContentProps) => {
-  return (
-    <div id="content" className="pb-24">
-      {ContentSwitch(displayContent)}
-    </div>
-  );
+  return <div id="content">{ContentSwitch(displayContent)}</div>;
 };
