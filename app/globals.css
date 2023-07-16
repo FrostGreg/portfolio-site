@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-rgb: 34, 40, 49;
+  --grey: 57, 62, 70;
+  --orange: 214, 90, 49;
+  --white: 238, 238, 238;
+  --blue-grey: 136 146 176;
+  --light-blue-grey: 168 178 209;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(var(--background-rgb));
+  display: flex;
+  color: rgb(var(--blue-grey));
+  font-size: 1.125rem;
+  padding: 33vh 9.6vw 0vh 9.6vw;
+  box-shadow: 0px 0px 159px 25px rgba(29, 12, 25, 0.45) inset;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.orange-text {
+  color: rgb(var(--orange));
+}
+
+.white-text {
+  color: rgb(var(--white));
+}
+
+.grey-text {
+  color: rgb(var(--grey));
+}
+
+.large-text {
+  font-size: 4rem;
+}
+
+.small-text {
+  font-size: 0.8135rem;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.inner-shadow {
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+header {
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header p {
+  font-size: 1.5rem;
+}
+
+nav {
+  width: 10vw;
+  height: 28vh;
+}
+
+header ul {
+  color: rgb(var(--grey));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header ul li {
+  height: 100%;
+  min-height: 75px;
+  width: 100%;
+  border-left: 0.15rem solid rgb(var(--grey));
+  transition: border 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+    color 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  text-align: center;
+  font-size: 1rem;
+}
+
+header ul li button {
+  height: 100%;
+  width: 100%;
+}
+
+.active {
+  color: rgb(var(--white));
+  border-color: rgb(var(--white));
+}
+
+#content {
+  max-width: 35vw;
+  line-height: 1.5rem;
+}
+
+.emoji-list {
+  line-height: 2.5rem;
+}
+
+.emoji-list li span {
+  font-size: 2rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.list li::marker {
+  content: "▹";
+  color: rgb(var(--orange));
+  margin-right: 5rem;
+}
+
+.list li {
+  color: rgb(var(--blue-grey));
+  list-style-position: inside;
+}
+
+.horizontal-nav {
+  color: rgb(var(--grey));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.horizontal-nav li {
+  border-bottom: 0.135rem solid rgb(var(--grey));
+  transition: border 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
+    color 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.horizontal-nav-active {
+  color: rgb(var(--orange));
+  border-color: rgb(var(--white)) !important;
+}
+
+.job-title {
+  color: rgb(var(--white));
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.date {
+  color: rgb(var(--blue-grey));
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.job-description {
+  display: block;
+  margin-left: 2rem;
+}
+
+.job-description li {
+  margin-bottom: 1rem;
+  list-style-position: outside;
+}
+
+.job-description li p {
+  margin-left: 1rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.link-button {
+  color: rgb(var(--orange));
+  padding: 1rem;
+  border: 0.135rem rgb(var(--orange)) solid;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+}
+
+.project-title {
+  color: rgb(var(--white));
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-indicator {
+  border: 0.8rem solid rgb(var(--grey));
+  border-radius: 0.8rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 1rem;
+}
+
+.project-active {
+  border: 0.8rem solid rgb(var(--white));
+  border-radius: 0.8rem;
+  margin: 1rem;
+}
+
+.project-description {
+  text-align: right;
+  background-color: rgb(var(--grey));
+  border-radius: 4px;
+  padding: 25px;
+  margin: 2rem 0rem 2rem 0rem;
+  word-break: break-word;
+  color: rgb(var(--light-blue-grey));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.project-image-wrapper {
+  border-spacing: 1rem;
+  background-color: rgba(var(--orange), 0.4);
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  min-height: 338px;
+}
+
+.project-image {
+  border-radius: 0.25rem;
+  opacity: 0.3;
+  filter: grayscale(80%) contrast(1) brightness(0.5);
+  object-fit: cover;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  filter: brightness(150%);
+  text-decoration: none;
+}
+
+button:hover {
+  filter: brightness(200%);
+  transform: scale(1.1);
+}
