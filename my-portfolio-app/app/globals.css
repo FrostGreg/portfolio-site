@@ -8,6 +8,7 @@
   --orange: 214, 90, 49;
   --white: 238, 238, 238;
   --blue-grey: 136 146 176;
+  --light-blue-grey: 168 178 209;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,7 +28,7 @@ body {
   color: rgb(var(--blue-grey));
   font-size: 1.125rem;
   padding: 36vh 9.6vw 0vh 9.6vw;
-  box-shadow: 0px 0px 159px 25px rgba(29, 12, 25, 0.25) inset;
+  box-shadow: 0px 0px 159px 25px rgba(29, 12, 25, 0.45) inset;
   height: 100vh;
   width: 100vw;
 }
@@ -216,10 +217,13 @@ header ul li button {
   padding: 25px;
   margin: 2rem 0rem 2rem 0rem;
   word-break: break-word;
+  color: rgb(var(--light-blue-grey));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .project-image-wrapper {
-  background-color: rgba(var(--orange), 0.3);
+  border-spacing: 1rem;
+  background-color: rgba(var(--orange), 0.2);
   grid-column-start: 1;
   grid-column-end: 8;
   grid-row-start: 1;
@@ -234,7 +238,7 @@ header ul li button {
 .project-image {
   border-radius: 0.25rem;
   opacity: 0.3;
-  filter: grayscale(80%) contrast(1) brightness(0.5);
+  filter: grayscale(90%) contrast(1) brightness(0.5);
   object-fit: cover;
 }
 
