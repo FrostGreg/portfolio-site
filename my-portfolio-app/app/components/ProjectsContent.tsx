@@ -62,10 +62,11 @@ const ArticleContent = ({
         ))}
       </ul>
     </div>
-    <div className="project-image-wrapper">
+    <div className="project-image-wrapper" aria-hidden>
       <Image
         src={imageProps.src}
         alt={imageProps.alt}
+        fill
         className="project-image"
       />
     </div>

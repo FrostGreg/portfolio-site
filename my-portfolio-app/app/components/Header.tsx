@@ -28,7 +28,7 @@ export const Header = ({
                 setActiveTab("About");
               }}
             >
-              <a>About me</a>
+              About me
             </button>
           </li>
           <li className={activeTab === "Experience" ? "active" : ""}>
@@ -37,7 +37,7 @@ export const Header = ({
                 setActiveTab("Experience");
               }}
             >
-              <a>Where I&apos;ve worked</a>
+              Where I&apos;ve worked
             </button>
           </li>
           <li className={activeTab === "Projects" ? "active" : ""}>
@@ -46,7 +46,7 @@ export const Header = ({
                 setActiveTab("Projects");
               }}
             >
-              <a>Things I&apos;ve built</a>
+              Things I&apos;ve built
             </button>
           </li>
           <li className={activeTab === "Contact" ? "active" : ""}>
@@ -55,7 +55,7 @@ export const Header = ({
                 setActiveTab("Contact");
               }}
             >
-              <a>Get in touch</a>
+              Get in touch
             </button>
           </li>
         </ul>
