@@ -9,7 +9,7 @@ type LinkProp = {
 
 const Link = ({ href, children }: LinkProp) => {
   return (
-    <a href={href} target="_blank" className="orange-text">
+    <a href={href} target="_blank">
       {children}
     </a>
   );

@@ -37,9 +37,7 @@ const ArticleContent = ({
 }: ArticleContentProps) => (
   <article className="grid grid-cols-10">
     <div className="col-start-3 col-end-11 row-start-1 row-end-2 text-right order-2 z-10">
-      <h4 className={`orange-text small-text ${montserrat.className}`}>
-        {type} Project
-      </h4>
+      <h4 className={`project-type ${montserrat.className}`}>{type} Project</h4>
       <h3 className="project-title my-2">{title}</h3>
       <p className="project-description">
         {description}
@@ -47,7 +45,7 @@ const ArticleContent = ({
           <>
             {" "}
             For more info check out this{" "}
-            <a href={link} target="_blank" className="orange-text">
+            <a href={link} target="_blank">
               repo
             </a>
             .
