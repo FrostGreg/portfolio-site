@@ -9,7 +9,9 @@ const ContactContent = () => {
         Please feel free to reach out if you have any questions or want to
         connect. I&apos;m always up to chat about web development, so feel free
         to hit me up; I&apos;d love to hear from you!{" "}
-        <span aria-hidden>👋🏻</span>
+        <span className="text-2xl" aria-hidden>
+          👋🏻
+        </span>
       </p>
       <a
         className={`link-button my-12 ${montserrat.className}`}
