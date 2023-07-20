@@ -35,11 +35,7 @@ const ExperienceContent = () => {
         <article className="mt-4">
           <h3 className="job-title">
             Web Developer{" "}
-            <a
-              className="orange-text"
-              href="https://www.capitalone.co.uk/"
-              target="_blank"
-            >
+            <a href="https://www.capitalone.co.uk/" target="_blank">
               @ Capital One
             </a>
           </h3>

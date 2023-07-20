@@ -3,16 +3,99 @@
 @tailwind utilities;
 
 :root {
-  --background-rgb: 34, 40, 49;
-  --grey: 57, 62, 70;
-  --orange: 214, 90, 49;
+  --dark-navy: 34, 40, 49;
+  --dark-grey: 57, 62, 70;
+  --dark-orange: 214, 90, 49;
   --white: 238, 238, 238;
   --blue-grey: 136 146 176;
-  --light-blue-grey: 168 178 209;
+  --dark-light-blue-grey: 168 178 209;
+
+  --light-navy: 61, 64, 91;
+  --light-grey: 172, 182, 204;
+  --light-orange: 224, 122, 95;
+  --light-cream: 242, 204, 143;
+  --off-white: 244, 241, 222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background-color: var(--dark-navy);
+    --name-is-color: var(--dark-orange);
+    --name-color: var(--white);
+    --tag-line-color: var(--dark-grey);
+    --active-nav-color: var(--white);
+    --inactive-nav-color: var(--dark-grey);
+
+    --main-text-color: var(--blue-grey);
+    --link-text-color: var(--dark-orange);
+    --list-icon-color: var(--dark-orange);
+
+    --job-active-text-color: var(--dark-orange);
+    --job-title-color: var(--white);
+
+    --project-type-color: var(--dark-orange);
+    --project-title-color: var(--white);
+    --project-overlay-color: var(--dark-grey);
+    --project-overlay-text-color: var(--light-blue-grey);
+    --project-mask-color: var(--dark-orange);
+    --project-active-indicator-color: var(--white);
+    --project-inactive-indicator-color: var(--dark-grey);
+
+    --contact-button-background-color: var(--dark-navy);
+    --contact-button-color: var(--dark-orange);
+
+    --mobile-divider-color: var(--white);
+  }
+
+  a:hover {
+    filter: brightness(150%);
+    text-decoration: none;
+  }
+
+  button:hover {
+    filter: brightness(200%);
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: var(--off-white);
+    --name-is-color: var(--light-orange);
+    --name-color: var(--light-navy);
+    --tag-line-color: var(--light-navy);
+    --active-nav-color: var(--light-navy);
+    --inactive-nav-color: var(--light-grey);
+
+    --main-text-color: var(--light-navy);
+    --link-text-color: var(--light-orange);
+    --list-icon-color: var(--light-orange);
+
+    --job-active-text-color: var(--light-orange);
+    --job-title-color: var(--light-navy);
+
+    --project-type-color: var(--light-orange);
+    --project-title-color: var(--light-navy);
+    --project-overlay-color: var(--light-navy);
+    --project-overlay-text-color: var(--off-white);
+    --project-mask-color: var(--light-cream);
+    --project-active-indicator-color: var(--off-white);
+    --project-inactive-indicator-color: var(--light-cream);
+
+    --contact-button-background-color: var(--light-cream);
+    --contact-button-color: var(--light-navy);
+
+    --mobile-divider-color: var(--light-navy);
+  }
+
+  a:hover {
+    filter: brightness(75%);
+    text-decoration: none;
+  }
+
+  button:hover {
+    filter: brightness(50%);
+    transform: scale(1.1);
   }
 }
 
@@ -23,9 +106,9 @@ body {
 }
 
 body {
-  background: rgb(var(--background-rgb));
+  background: rgb(var(--background-color));
   display: flex;
-  color: rgb(var(--blue-grey));
+  color: rgb(var(--main-text-color));
   font-size: 1.125rem;
   padding: 33vh 9.6vw 0vh 9.6vw;
   box-shadow: 0px 0px 159px 25px rgba(29, 12, 25, 0.45) inset;
@@ -37,38 +120,30 @@ body {
   box-sizing: border-box;
 }
 
-.orange-text {
-  color: rgb(var(--orange));
-}
-
-.white-text {
-  color: rgb(var(--white));
-}
-
-.grey-text {
-  color: rgb(var(--grey));
-}
-
-.large-text {
-  font-size: 4rem;
-}
-
 .small-text {
   font-size: 0.8135rem;
-}
-
-.bold-text {
-  font-weight: 600;
-}
-
-.inner-shadow {
-  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 header {
   width: 60vw;
   display: flex;
   justify-content: space-evenly;
+}
+
+.intro {
+  color: rgb(var(--name-is-color));
+}
+
+h1 {
+  color: rgb(var(--name-color));
+  font-size: 4rem;
+}
+
+.tag-line {
+  color: rgb(var(--tag-line-color));
+  font-size: 4rem;
+  font-weight: 600;
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 header p {
@@ -81,7 +156,7 @@ nav {
 }
 
 header ul {
-  color: rgb(var(--grey));
+  color: rgb(var(--inactive-nav-color));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +168,7 @@ header ul li {
   height: 100%;
   min-height: 75px;
   width: 100%;
-  border-left: 0.15rem solid rgb(var(--grey));
+  border-left: 0.15rem solid rgb(var(--inactive-nav-color));
   transition: border 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
     color 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   text-align: center;
@@ -106,8 +181,8 @@ header ul li button {
 }
 
 .active {
-  color: rgb(var(--white));
-  border-color: rgb(var(--white));
+  color: rgb(var(--active-nav-color));
+  border-color: rgb(var(--active-nav-color));
 }
 
 #content {
@@ -121,6 +196,7 @@ header ul li button {
 
 .emoji-list li span {
   font-size: 2rem;
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .list {
@@ -131,40 +207,38 @@ header ul li button {
 
 .list li::marker {
   content: "▹";
-  color: rgb(var(--orange));
+  color: rgb(var(--list-icon-color));
   margin-right: 5rem;
 }
 
 .list li {
-  color: rgb(var(--blue-grey));
   list-style-position: inside;
 }
 
 .horizontal-nav {
-  color: rgb(var(--grey));
+  color: rgb(var(--inactive-nav-color));
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .horizontal-nav li {
-  border-bottom: 0.135rem solid rgb(var(--grey));
+  border-bottom: 0.135rem solid rgb(var(--inactive-nav-color));
   transition: border 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
     color 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
 .horizontal-nav-active {
-  color: rgb(var(--orange));
-  border-color: rgb(var(--white)) !important;
+  color: rgb(var(--job-active-text-color));
+  border-color: rgb(var(--active-nav-color)) !important;
 }
 
 .job-title {
-  color: rgb(var(--white));
+  color: rgb(var(--job-title-color));
   font-size: 1.375rem;
   font-weight: 500;
 }
 
 .date {
-  color: rgb(var(--blue-grey));
   font-size: 0.8125rem;
   font-weight: 500;
 }
@@ -191,46 +265,53 @@ header ul li button {
 }
 
 .link-button {
-  color: rgb(var(--orange));
+  color: rgb(var(--contact-button-color));
   padding: 1rem;
-  border: 0.135rem rgb(var(--orange)) solid;
+  border: 0.135rem rgb(var(--contact-button-color)) solid;
   border-radius: 4px;
   font-size: 0.8125rem;
+  background-color: rgb(var(--contact-button-background-color));
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.project-type {
+  color: rgb(var(--project-type-color));
+  font-size: 0.8135rem;
 }
 
 .project-title {
-  color: rgb(var(--white));
+  color: rgb(var(--project-title-color));
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .project-indicator {
-  border: 0.8rem solid rgb(var(--grey));
+  border: 0.8rem solid rgb(var(--project-inactive-indicator-color));
   border-radius: 0.8rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 1rem;
 }
 
 .project-active {
-  border: 0.8rem solid rgb(var(--white));
+  border: 0.8rem solid rgb(var(--project-active-indicator-color));
   border-radius: 0.8rem;
   margin: 1rem;
 }
 
 .project-description {
   text-align: right;
-  background-color: rgb(var(--grey));
+  background-color: rgb(var(--project-overlay-color));
   border-radius: 4px;
   padding: 25px;
   margin: 2rem 0rem 2rem 0rem;
   word-break: break-word;
-  color: rgb(var(--light-blue-grey));
+  color: rgb(var(--project-overlay-text-color));
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .project-image-wrapper {
   border-spacing: 1rem;
-  background-color: rgba(var(--orange), 0.4);
+  background-color: rgba(var(--project-mask-color), 0.4);
   grid-column-start: 1;
   grid-column-end: 8;
   grid-row-start: 1;
@@ -251,14 +332,5 @@ header ul li button {
 
 a {
   text-decoration: underline;
-}
-
-a:hover {
-  filter: brightness(150%);
-  text-decoration: none;
-}
-
-button:hover {
-  filter: brightness(200%);
-  transform: scale(1.1);
+  color: rgb(var(--link-text-color));
 }
