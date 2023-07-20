@@ -19,8 +19,11 @@ const AboutContent = () => {
   return (
     <>
       <p className="pb-6">
-        Hey there!<span aria-hidden>👋🏻</span> My name is Gregory, and I&apos;m a
-        computer science student at the{" "}
+        Hey there!
+        <span className="text-2xl" aria-hidden>
+          👋🏻
+        </span>{" "}
+        My name is Gregory, and I&apos;m a computer science student at the{" "}
         <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
           University of Nottingham
         </Link>
@@ -34,16 +37,16 @@ const AboutContent = () => {
       <p className="pb-6">Some quick fire interests of mine:</p>
       <ul className="pb-6 grid columns-2 emoji-list">
         <li className="col-start-1">
-          <span aria-hidden>🌋</span> LOTR fan
+          <span aria-hidden>🌋</span> Lord of the Rings
         </li>
         <li className="col-start-2">
-          <span aria-hidden>🎧</span> Audiophile
+          <span aria-hidden>🎧</span> Music
         </li>
         <li className="col-start-1">
-          <span aria-hidden>🕹️</span> I like video games
+          <span aria-hidden>🕹️</span> Video games
         </li>
         <li className="col-start-2">
-          <span aria-hidden>⌚</span> Watch enthusiast
+          <span aria-hidden>⌚</span> Watches
         </li>
       </ul>
       <p className="pb-6">
