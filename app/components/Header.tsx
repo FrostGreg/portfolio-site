@@ -4,6 +4,8 @@ import { ContentTypes } from "../page";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const HeaderButton = ({}) => <button></button>;
+
 export const Header = ({
   activeTab,
   setActiveTab,
@@ -26,7 +28,13 @@ export const Header = ({
                 setActiveTab("About");
               }}
             >
-              About me
+              <span className="mobile">
+                <span className="emoji" aria-hidden>
+                  👋🏻
+                </span>
+                About me
+              </span>
+              <span className="desktop">About me</span>
             </button>
           </li>
           <li className={activeTab === "Experience" ? "active" : ""}>
@@ -35,7 +43,13 @@ export const Header = ({
                 setActiveTab("Experience");
               }}
             >
-              Where I&apos;ve worked
+              <span className="mobile">
+                <span className="emoji" aria-hidden>
+                  📚
+                </span>
+                Experience
+              </span>
+              <span className="desktop">Where I&apos;ve worked</span>
             </button>
           </li>
           <li className={activeTab === "Projects" ? "active" : ""}>
@@ -44,7 +58,13 @@ export const Header = ({
                 setActiveTab("Projects");
               }}
             >
-              Things I&apos;ve built
+              <span className="mobile">
+                <span className="emoji" aria-hidden>
+                  🏗️
+                </span>
+                Projects
+              </span>
+              <span className="desktop">Things I&apos;ve built</span>
             </button>
           </li>
           <li className={activeTab === "Contact" ? "active" : ""}>
@@ -53,7 +73,13 @@ export const Header = ({
                 setActiveTab("Contact");
               }}
             >
-              Get in touch
+              <span className="mobile">
+                <span className="emoji" aria-hidden>
+                  💬
+                </span>
+                Contact
+              </span>
+              <span className="desktop">Get in touch</span>
             </button>
           </li>
         </ul>
