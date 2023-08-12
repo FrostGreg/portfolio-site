@@ -39,6 +39,7 @@
     --project-overlay-color: var(--dark-grey);
     --project-overlay-text-color: var(--light-blue-grey);
     --project-mask-color: var(--dark-orange);
+    --project-active-border-color: var(--dark-orange);
     --project-active-indicator-color: var(--white);
     --project-inactive-indicator-color: var(--dark-grey);
 
@@ -47,6 +48,9 @@
 
     /* mobile colours */
     --divider-color: var(--white);
+    --mobile-project-mask-color: var(--dark-orange);
+    --mobile-project-mask-opacity: 0.3;
+    --mobile-project-title-color: var(--white);
     --tab-bar-background: var(--dark-grey);
     --tab-bar-font: var(--white);
   }
@@ -84,7 +88,8 @@
     --project-overlay-color: var(--light-navy);
     --project-overlay-text-color: var(--off-white);
     --project-mask-color: var(--light-cream);
-    --project-active-indicator-color: var(--off-white);
+    --project-active-border-color: var(--light-orange);
+    --project-active-indicator-color: var(--light-navy);
     --project-inactive-indicator-color: var(--light-cream);
 
     --contact-button-background-color: var(--light-cream);
@@ -92,6 +97,9 @@
 
     /* mobile colours */
     --divider-color: var(--light-navy);
+    --mobile-project-mask-color: var(--light-navy);
+    --mobile-project-mask-opacity: 0.8;
+    --mobile-project-title-color: var(--off-white);
     --tab-bar-background: var(--light-navy);
     --tab-bar-font: var(--off-white);
   }
@@ -158,7 +166,7 @@ header p {
 }
 
 nav {
-  width: 10vw;
+  width: 13vw;
   height: 28vh;
 }
 
@@ -289,6 +297,19 @@ header ul li button {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.project-article {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.project-wrapper {
+  text-align: right;
+  grid-row: 1/2;
+  grid-column: 3/11;
+  order: 2;
+  z-index: 10;
+}
+
 .project-type {
   color: rgb(var(--project-type-color));
   font-size: 0.8135rem;
@@ -298,6 +319,7 @@ header ul li button {
   color: rgb(var(--project-title-color));
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .project-indicator {
@@ -308,13 +330,16 @@ header ul li button {
 }
 
 .project-active {
+  border: 0.3rem solid rgb(var(--project-active-border-color));
+  border-radius: 2rem;
+}
+
+.project-active button {
   border: 0.8rem solid rgb(var(--project-active-indicator-color));
-  border-radius: 0.8rem;
-  margin: 1rem;
+  margin: 0.8rem;
 }
 
 .project-description {
-  text-align: right;
   background-color: rgb(var(--project-overlay-color));
   border-radius: 4px;
   padding: 25px;
@@ -322,6 +347,10 @@ header ul li button {
   word-break: break-word;
   color: rgb(var(--project-overlay-text-color));
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.project-list {
+  margin-left: 1rem;
 }
 
 .project-image-wrapper {
@@ -504,6 +533,70 @@ a {
 
   .job-description {
     margin-left: 0rem;
+  }
+
+  .project-article {
+    display: grid;
+  }
+
+  .project-wrapper {
+    grid-column-start: 2;
+    grid-column-end: 11;
+    padding: 0.75rem 0.75rem 1rem 0rem;
+  }
+
+  .project-type {
+    color: rgb(var(--project-type-color));
+    font-size: 0.8135rem;
+  }
+
+  .project-title {
+    color: rgb(var(--mobile-project-title-color));
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0rem;
+  }
+
+  .project-description {
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    word-break: break-word;
+    color: rgb(var(--project-overlay-text-color));
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    filter: none;
+  }
+
+  .project-list {
+    font-size: 0.8rem;
+    color: rgb(var(--mobile-project-title-color));
+  }
+
+  .project-image-wrapper {
+    border-spacing: 1rem;
+    background-color: rgba(
+      var(--mobile-project-mask-color),
+      var(--mobile-project-mask-opacity)
+    );
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    min-height: 0px;
+  }
+
+  .project-image {
+    border-radius: 0.25rem;
+    opacity: 0.3;
+    filter: grayscale(50%) contrast(1) brightness(0.5);
+    object-fit: cover;
+    mix-blend-mode: multiply;
   }
 
   a:hover {
