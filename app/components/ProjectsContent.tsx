@@ -35,10 +35,10 @@ const ArticleContent = ({
   link,
   imageProps,
 }: ArticleContentProps) => (
-  <article className="grid grid-cols-10">
-    <div className="col-start-3 col-end-11 row-start-1 row-end-2 text-right order-2 z-10">
+  <article className="project-article">
+    <div className="project-wrapper">
       <h4 className={`project-type ${montserrat.className}`}>{type} Project</h4>
-      <h3 className="project-title my-2">{title}</h3>
+      <h3 className="project-title">{title}</h3>
       <p className="project-description">
         {description}
         {link && (
@@ -54,7 +54,7 @@ const ArticleContent = ({
       </p>
       <ul className="flex justify-end">
         {technologies.map((val, index) => (
-          <li key={index} className="ml-4">
+          <li key={index} className="project-list">
             <p className={montserrat.className}>{val}</p>
           </li>
         ))}
@@ -76,6 +76,15 @@ const ProjectsContent = () => {
 
   return (
     <>
+      <div className="mobile">
+        <div className="content-title">
+          <div className="divider left-divider"></div>
+          <h2 className="title">
+            <span aria-hidden>🏗️</span>Things I&apos;ve built
+          </h2>
+          <div className="divider right-divider"></div>
+        </div>
+      </div>
       {activeProject === 0 && (
         <ArticleContent
           type="Latest"
@@ -128,36 +137,36 @@ const ProjectsContent = () => {
       )}
 
       <ol className="flex justify-center mt-8">
-        <li className="">
+        <li className={activeProject === 0 ? "project-active" : ""}>
           <button
-            className={`project-indicator ${
-              activeProject === 0 ? "project-active" : ""
-            }`}
-            onClick={() => setActiveProject(0)}
+            className="project-indicator"
+            onClick={() => {
+              setActiveProject(0);
+            }}
           ></button>
         </li>
-        <li>
+        <li className={activeProject === 1 ? "project-active" : ""}>
           <button
-            className={`project-indicator ${
-              activeProject === 1 ? "project-active" : ""
-            }`}
-            onClick={() => setActiveProject(1)}
+            className="project-indicator"
+            onClick={() => {
+              setActiveProject(1);
+            }}
           ></button>
         </li>
-        <li>
+        <li className={activeProject === 2 ? "project-active" : ""}>
           <button
-            className={`project-indicator ${
-              activeProject === 2 ? "project-active" : ""
-            }`}
-            onClick={() => setActiveProject(2)}
+            className="project-indicator"
+            onClick={() => {
+              setActiveProject(2);
+            }}
           ></button>
         </li>
-        <li>
+        <li className={activeProject === 3 ? "project-active" : ""}>
           <button
-            className={`project-indicator ${
-              activeProject === 3 ? "project-active" : ""
-            }`}
-            onClick={() => setActiveProject(3)}
+            className="project-indicator"
+            onClick={() => {
+              setActiveProject(3);
+            }}
           ></button>
         </li>
       </ol>

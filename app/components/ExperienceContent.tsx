@@ -9,10 +9,19 @@ const ExperienceContent = () => {
   const [tabNumber, setTabNumber] = useState(0);
   return (
     <>
+      <div className="mobile">
+        <div className="content-title">
+          <div className="divider left-divider"></div>
+          <h2 className="title">
+            <span aria-hidden>📚</span>Where I&apos;ve worked
+          </h2>
+          <div className="divider right-divider"></div>
+        </div>
+      </div>
       <ul className="horizontal-nav">
         <li className={tabNumber === 0 ? "horizontal-nav-active" : ""}>
           <button
-            className={`px-20 py-3 w-full ${montserrat.className}`}
+            className={`experience-button ${montserrat.className}`}
             onClick={() => {
               setTabNumber(0);
             }}
@@ -22,7 +31,7 @@ const ExperienceContent = () => {
         </li>
         <li className={tabNumber === 1 ? "horizontal-nav-active" : ""}>
           <button
-            className={`px-20 py-3 w-full ${montserrat.className}`}
+            className={`experience-button ${montserrat.className}`}
             onClick={() => {
               setTabNumber(1);
             }}
@@ -40,25 +49,19 @@ const ExperienceContent = () => {
             </a>
           </h3>
           <p className={`date ${montserrat.className}`}>June 2022 - Present</p>
-          <ul className="job-description list pt-6">
+          <ul className="job-description list">
             <li>
-              <p>
-                Develop simple, easy-to-maintain, and performant code for
-                various web applications
-              </p>
+              Develop simple, easy-to-maintain, and performant code for various
+              web applications
             </li>
             <li>
-              <p>
-                Work with a variety of different languages and frameworks such
-                as JavaScript, TypeScript, React, Node.js, and Cypress
-              </p>
+              Work with a variety of different languages and frameworks such as
+              JavaScript, TypeScript, React, Node.js, and Cypress
             </li>
             <li>
-              <p>
-                Effectively convey my ideas and work collaboratively with
-                cross-functional teams including engineers, designers, and
-                product owners to achieve project goals
-              </p>
+              Effectively convey my ideas and work collaboratively with
+              cross-functional teams including engineers, designers, and product
+              owners to achieve project goals
             </li>
           </ul>
         </article>
@@ -69,25 +72,19 @@ const ExperienceContent = () => {
           <p className={`date ${montserrat.className}`}>
             August 2021 - June 2022
           </p>
-          <ul className="job-description list pt-6">
+          <ul className="job-description list">
             <li>
-              <p>
-                Maintain and expand existing customer applications based on
-                client requests
-              </p>
+              Maintain and expand existing customer applications based on client
+              requests
             </li>
             <li>
-              <p>
-                Extensively work with Python and the Tkinter toolkit, to gain
-                proficiency in creating appealing user interfaces
-              </p>
+              Extensively work with Python and the Tkinter toolkit, to gain
+              proficiency in creating appealing user interfaces
             </li>
             <li>
-              <p>
-                Collaborate with non-technical clients to gather requirements
-                and ensure the delivered product either meets their needs or
-                gain feedback to further improve it.
-              </p>
+              Collaborate with non-technical clients to gather requirements and
+              ensure the delivered product either meets their needs or gain
+              feedback to further improve it.
             </li>
           </ul>
         </article>
