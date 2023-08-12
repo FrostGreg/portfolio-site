@@ -9,6 +9,15 @@ const ExperienceContent = () => {
   const [tabNumber, setTabNumber] = useState(0);
   return (
     <>
+      <div className="mobile">
+        <div className="content-title">
+          <div className="divider left-divider"></div>
+          <h2 className="title">
+            <span aria-hidden>📚</span>Where I&apos;ve worked
+          </h2>
+          <div className="divider right-divider"></div>
+        </div>
+      </div>
       <ul className="horizontal-nav">
         <li className={tabNumber === 0 ? "horizontal-nav-active" : ""}>
           <button

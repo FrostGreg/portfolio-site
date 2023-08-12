@@ -76,6 +76,15 @@ const ProjectsContent = () => {
 
   return (
     <>
+      <div className="mobile">
+        <div className="content-title">
+          <div className="divider left-divider"></div>
+          <h2 className="title">
+            <span aria-hidden>🏗️</span>Things I&apos;ve built
+          </h2>
+          <div className="divider right-divider"></div>
+        </div>
+      </div>
       {activeProject === 0 && (
         <ArticleContent
           type="Latest"

@@ -18,7 +18,7 @@ export const Header = ({
       <div className="mt-20">
         <p className="intro">Hi my name is,</p>
         <h1>Gregory Frost</h1>
-        <p className="tag-line">I write code. 🐐</p>
+        <p className="tag-line">I write code.</p>
       </div>
       <nav className="nav">
         <ul>

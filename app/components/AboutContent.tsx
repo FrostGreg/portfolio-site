@@ -18,9 +18,18 @@ const Link = ({ href, children }: LinkProp) => {
 const AboutContent = () => {
   return (
     <>
+      <div className="mobile">
+        <div className="content-title">
+          <div className="divider left-divider"></div>
+          <h2 className="title">
+            <span aria-hidden>👋🏻</span>About me
+          </h2>
+          <div className="divider right-divider"></div>
+        </div>
+      </div>
       <p className="pb-6">
         Hey there!
-        <span className="text-2xl" aria-hidden>
+        <span className="text-2xl desktop" aria-hidden>
           👋🏻
         </span>{" "}
         My name is Gregory, and I&apos;m a computer science student at the{" "}
