@@ -1,4 +1,7 @@
 import { Montserrat } from "next/font/google";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInbox } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,18 +22,21 @@ const ContactContent = () => {
           Please feel free to reach out if you have any questions or want to
           connect. I&apos;m always up to chat about web development, so feel
           free to hit me up; I&apos;d love to hear from you!{" "}
-          <span className="text-2xl" aria-hidden>
+          <span className="text-2xl waving" aria-hidden>
             👋🏻
           </span>
         </p>
-        <a
-          className={`link-button my-12 ${montserrat.className}`}
-          href="mailto:frost.computing21@gmail.com"
-          target="_blank"
-        >
-          Say Hello
-        </a>
-
+        <div className="social-links">
+          <a href="mailto:frost.computing21@gmail.com" target="_blank">
+            <FontAwesomeIcon icon={faInbox} />
+          </a>
+          <a href="https://github.com/FrostGreg" target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href="https://linkedin.com/in/gregory-frost" target="_blank">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </div>
         <p className={`small-text ${montserrat.className}`}>
           Designed and Built by Gregory Frost
         </p>

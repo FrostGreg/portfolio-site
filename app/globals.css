@@ -92,7 +92,7 @@
     --project-active-indicator-color: var(--light-navy);
     --project-inactive-indicator-color: var(--light-cream);
 
-    --contact-button-background-color: var(--light-cream);
+    --contact-button-background-color: var(--off-white);
     --contact-button-color: var(--light-navy);
 
     /* mobile colours */
@@ -213,6 +213,23 @@ header ul li button {
   line-height: 1.5rem;
 }
 
+@keyframes wave {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.waving {
+  animation: wave ease-in-out 1s 5;
+  display: inline-block !important;
+}
+
 .emoji-list {
   line-height: 2.5rem;
 }
@@ -287,14 +304,20 @@ header ul li button {
   align-items: center;
 }
 
-.link-button {
+.social-links {
   color: rgb(var(--contact-button-color));
-  padding: 1rem;
-  border: 0.135rem rgb(var(--contact-button-color)) solid;
-  border-radius: 4px;
-  font-size: 0.8125rem;
+  font-size: 3rem;
   background-color: rgb(var(--contact-button-background-color));
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 5vh 0vh 5vh 0vh;
+}
+
+.social-links a {
+  margin: 0vw 2vw 0vw 2vw;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.2));
+}
+
+.social-links a:hover {
+  filter: brightness(150%);
 }
 
 .project-article {
