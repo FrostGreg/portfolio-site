@@ -14,7 +14,7 @@ export const metadata = {
   themeColor: "#222831",
   colorScheme: "dark light",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico?v=2",
   },
 };
 
