@@ -29,7 +29,7 @@ const AboutContent = () => {
       </div>
       <p className="pb-6">
         Hey there!
-        <span className="text-2xl desktop" aria-hidden>
+        <span className="text-2xl desktop waving" aria-hidden>
           👋🏻
         </span>{" "}
         My name is Gregory, and I&apos;m a computer science student at the{" "}
@@ -46,7 +46,10 @@ const AboutContent = () => {
       <p className="pb-6">Some quick fire interests of mine:</p>
       <ul className="pb-6 grid columns-2 emoji-list">
         <li className="col-start-1">
-          <span aria-hidden>🌋</span> Lord of the Rings
+          <span aria-hidden className="erupt">
+            🌋
+          </span>{" "}
+          Lord of the Rings
         </li>
         <li className="col-start-2">
           <span aria-hidden>🎧</span> Music
