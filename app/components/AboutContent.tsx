@@ -2,6 +2,8 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+import { motion } from "framer-motion";
+
 type LinkProp = {
   href: string;
   children: JSX.Element | string;
@@ -17,7 +19,15 @@ const Link = ({ href, children }: LinkProp) => {
 
 const AboutContent = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 1500 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      exit={{
+        y: -1000,
+        transition: { duration: 0.2 },
+      }}
+    >
       <div className="mobile">
         <div className="content-title">
           <div className="divider left-divider"></div>
@@ -81,7 +91,7 @@ const AboutContent = () => {
         <li>Styled Components</li>
         <li>Cypress</li>
       </ul>
-    </>
+    </motion.div>
   );
 };
 

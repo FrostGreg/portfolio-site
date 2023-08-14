@@ -3,12 +3,22 @@
 import { useState } from "react";
 import { Montserrat } from "next/font/google";
 
+import { motion } from "framer-motion";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ExperienceContent = () => {
   const [tabNumber, setTabNumber] = useState(0);
   return (
-    <>
+    <motion.div
+      initial={{ y: 1000 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      exit={{
+        y: -1000,
+        transition: { duration: 0.2 },
+      }}
+    >
       <div className="mobile">
         <div className="content-title">
           <div className="divider left-divider"></div>
@@ -89,7 +99,7 @@ const ExperienceContent = () => {
           </ul>
         </article>
       )}
-    </>
+    </motion.div>
   );
 };
 
