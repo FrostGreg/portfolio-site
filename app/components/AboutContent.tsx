@@ -2,6 +2,8 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+import { motion } from "framer-motion";
+
 type LinkProp = {
   href: string;
   children: JSX.Element | string;
@@ -17,7 +19,15 @@ const Link = ({ href, children }: LinkProp) => {
 
 const AboutContent = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 1500 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      exit={{
+        y: -1000,
+        transition: { duration: 0.2 },
+      }}
+    >
       <div className="mobile">
         <div className="content-title">
           <div className="divider left-divider"></div>
@@ -27,7 +37,12 @@ const AboutContent = () => {
           <div className="divider right-divider"></div>
         </div>
       </div>
-      <p className="pb-6">
+      <motion.p
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="pb-6"
+      >
         Hey there!
         <span className="text-2xl desktop waving" aria-hidden>
           👋🏻
@@ -42,9 +57,21 @@ const AboutContent = () => {
         </Link>{" "}
         as a web developer, where I&apos;ve been working with technologies like
         React, TypeScript, and Node.
-      </p>
-      <p className="pb-6">Some quick fire interests of mine:</p>
-      <ul className="pb-6 grid columns-2 emoji-list">
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="pb-6"
+      >
+        Some quick fire interests of mine:
+      </motion.p>
+      <motion.ul
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="pb-6 grid columns-2 emoji-list"
+      >
         <li className="col-start-1">
           <span aria-hidden className="erupt">
             🌋
@@ -60,8 +87,13 @@ const AboutContent = () => {
         <li className="col-start-2">
           <span aria-hidden>⌚</span> Watches
         </li>
-      </ul>
-      <p className="pb-6">
+      </motion.ul>
+      <motion.p
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2 }}
+        className="pb-6"
+      >
         Recently, I&apos;ve been brushing up my web development skills by taking
         courses from{" "}
         <Link href="https://frontendmasters.com/">FrontEndMasters</Link>, one of
@@ -71,17 +103,28 @@ const AboutContent = () => {
         </Link>{" "}
         that allows users to create, store, and edit notes with the added
         convenience of Github sign in.
-      </p>
-      <p>Here are a few technologies I&apos;ve been working with recently:</p>
-      <ul className={`pt-6 ${montserrat.className} list`}>
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4 }}
+      >
+        Here are a few technologies I&apos;ve been working with recently:
+      </motion.p>
+      <motion.ul
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.6 }}
+        className={`pt-6 ${montserrat.className} list`}
+      >
         <li>Javascript (ES6+)</li>
         <li>React</li>
         <li className="py-2">Node.js</li>
         <li className="py-2">TypeScript</li>
         <li>Styled Components</li>
         <li>Cypress</li>
-      </ul>
-    </>
+      </motion.ul>
+    </motion.div>
   );
 };
 

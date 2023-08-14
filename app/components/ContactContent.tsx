@@ -3,11 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import { motion } from "framer-motion";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ContactContent = () => {
   return (
-    <>
+    <motion.div
+      initial={{ y: 1000 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      exit={{
+        y: -1000,
+        transition: { duration: 0.2 },
+      }}
+    >
       <div className="mobile">
         <div className="content-title">
           <div className="divider left-divider"></div>
@@ -18,33 +28,58 @@ const ContactContent = () => {
         </div>
       </div>
       <div className="contact">
-        <p>
+        <motion.p
+          initial={{ y: -1000, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           Please feel free to reach out if you have any questions or want to
           connect. I&apos;m always up to chat about web development, so feel
           free to hit me up; I&apos;d love to hear from you!{" "}
           <span className="text-2xl waving" aria-hidden>
             👋🏻
           </span>
-        </p>
+        </motion.p>
         <div className="social-links">
-          <a href="mailto:frost.computing21@gmail.com" target="_blank">
+          <motion.a
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            href="mailto:frost.computing21@gmail.com"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faInbox} />
-          </a>
+          </motion.a>
           <a href="https://github.com/FrostGreg" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="https://linkedin.com/in/gregory-frost" target="_blank">
+          <motion.a
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            href="https://linkedin.com/in/gregory-frost"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
-          </a>
+          </motion.a>
         </div>
-        <p className={`small-text ${montserrat.className}`}>
+        <motion.p
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className={`small-text ${montserrat.className}`}
+        >
           Designed and Built by Gregory Frost
-        </p>
-        <p className={`small-text ${montserrat.className}`}>
+        </motion.p>
+        <motion.p
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className={`small-text ${montserrat.className}`}
+        >
           All rights reserved ©️ Gregory Frost {new Date().getFullYear()}
-        </p>
+        </motion.p>
       </div>
-    </>
+    </motion.div>
   );
 };
 

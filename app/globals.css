@@ -309,6 +309,7 @@ header ul li button {
   font-size: 3rem;
   background-color: rgb(var(--contact-button-background-color));
   margin: 5vh 0vh 5vh 0vh;
+  display: flex;
 }
 
 .social-links a {

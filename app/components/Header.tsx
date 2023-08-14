@@ -2,9 +2,9 @@ import { Dispatch, SetStateAction } from "react";
 import { Montserrat } from "next/font/google";
 import { ContentTypes } from "../page";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+import { motion } from "framer-motion";
 
-const HeaderButton = ({}) => <button></button>;
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const Header = ({
   activeTab,
@@ -15,14 +15,24 @@ export const Header = ({
 }) => {
   return (
     <header className={montserrat.className}>
-      <div className="mt-20">
+      <motion.div
+        initial={{ opacity: 0, y: -1000 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+        className="mt-20"
+      >
         <p className="intro">Hi my name is,</p>
         <h1>Gregory Frost</h1>
         <p className="tag-line">I write code.</p>
-      </div>
+      </motion.div>
       <nav className="nav">
         <ul>
-          <li className={activeTab === "About" ? "active" : ""}>
+          <motion.li
+            className={activeTab === "About" ? "active" : ""}
+            initial={{ y: -1000 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 2.6 }}
+          >
             <button
               onClick={() => {
                 setActiveTab("About");
@@ -36,8 +46,13 @@ export const Header = ({
               </span>
               <span className="desktop">About me</span>
             </button>
-          </li>
-          <li className={activeTab === "Experience" ? "active" : ""}>
+          </motion.li>
+          <motion.li
+            className={activeTab === "Experience" ? "active" : ""}
+            initial={{ y: -1000 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 2.2 }}
+          >
             <button
               onClick={() => {
                 setActiveTab("Experience");
@@ -51,8 +66,13 @@ export const Header = ({
               </span>
               <span className="desktop">Where I&apos;ve worked</span>
             </button>
-          </li>
-          <li className={activeTab === "Projects" ? "active" : ""}>
+          </motion.li>
+          <motion.li
+            className={activeTab === "Projects" ? "active" : ""}
+            initial={{ y: -1000 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 1.8 }}
+          >
             <button
               onClick={() => {
                 setActiveTab("Projects");
@@ -66,8 +86,13 @@ export const Header = ({
               </span>
               <span className="desktop">Things I&apos;ve built</span>
             </button>
-          </li>
-          <li className={activeTab === "Contact" ? "active" : ""}>
+          </motion.li>
+          <motion.li
+            className={activeTab === "Contact" ? "active" : ""}
+            initial={{ y: -1000 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 1.4 }}
+          >
             <button
               onClick={() => {
                 setActiveTab("Contact");
@@ -81,7 +106,7 @@ export const Header = ({
               </span>
               <span className="desktop">Get in touch</span>
             </button>
-          </li>
+          </motion.li>
         </ul>
       </nav>
     </header>
