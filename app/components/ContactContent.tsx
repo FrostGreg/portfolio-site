@@ -41,7 +41,7 @@ const ContactContent = () => {
         </motion.p>
         <div className="social-links">
           <motion.a
-            initial={{ x: 100, opacity: 0.5 }}
+            initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
             href="mailto:frost.computing21@gmail.com"
@@ -53,7 +53,7 @@ const ContactContent = () => {
             <FontAwesomeIcon icon={faGithub} />
           </a>
           <motion.a
-            initial={{ x: -100, opacity: 0.5 }}
+            initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
             href="https://linkedin.com/in/gregory-frost"

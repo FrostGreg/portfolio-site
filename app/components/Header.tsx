@@ -28,14 +28,14 @@ export const Header = ({
       <nav className="nav">
         <ul>
           <motion.li
-            className={activeTab === ContentTypes.About ? "active" : ""}
+            className={activeTab === "About" ? "active" : ""}
             initial={{ y: -1000 }}
             animate={{ y: 0 }}
-            transition={{ delay: 2 }}
+            transition={{ delay: 2.6 }}
           >
             <button
               onClick={() => {
-                setActiveTab(ContentTypes.About);
+                setActiveTab("About");
               }}
             >
               <span className="mobile">
@@ -48,14 +48,14 @@ export const Header = ({
             </button>
           </motion.li>
           <motion.li
-            className={activeTab === ContentTypes.Experience ? "active" : ""}
+            className={activeTab === "Experience" ? "active" : ""}
             initial={{ y: -1000 }}
             animate={{ y: 0 }}
-            transition={{ delay: 1.6 }}
+            transition={{ delay: 2.2 }}
           >
             <button
               onClick={() => {
-                setActiveTab(ContentTypes.Experience);
+                setActiveTab("Experience");
               }}
             >
               <span className="mobile">
@@ -68,14 +68,14 @@ export const Header = ({
             </button>
           </motion.li>
           <motion.li
-            className={activeTab === ContentTypes.Projects ? "active" : ""}
+            className={activeTab === "Projects" ? "active" : ""}
             initial={{ y: -1000 }}
             animate={{ y: 0 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 1.8 }}
           >
             <button
               onClick={() => {
-                setActiveTab(ContentTypes.Projects);
+                setActiveTab("Projects");
               }}
             >
               <span className="mobile">
@@ -88,14 +88,14 @@ export const Header = ({
             </button>
           </motion.li>
           <motion.li
-            className={activeTab === ContentTypes.Contact ? "active" : ""}
+            className={activeTab === "Contact" ? "active" : ""}
             initial={{ y: -1000 }}
             animate={{ y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 1.4 }}
           >
             <button
               onClick={() => {
-                setActiveTab(ContentTypes.Contact);
+                setActiveTab("Contact");
               }}
             >
               <span className="mobile">

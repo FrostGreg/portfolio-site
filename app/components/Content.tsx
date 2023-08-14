@@ -8,13 +8,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ContentSwitch = (displayContent: ContentTypes) => {
   switch (displayContent) {
-    case ContentTypes.About:
+    case "About":
       return <AboutContent key="About" />;
-    case ContentTypes.Experience:
+    case "Experience":
       return <ExperienceContent key="Experience" />;
-    case ContentTypes.Projects:
+    case "Projects":
       return <ProjectsContent key="Projects" />;
-    case ContentTypes.Contact:
+    case "Contact":
       return <ContactContent key="Contact" />;
   }
 };
@@ -29,7 +29,7 @@ export const Content = ({ displayContent }: ContentProps) => {
       id="content"
       initial={{ opacity: 0, y: 1000 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+      transition={{ duration: 0.8, delay: 3, ease: [0, 0.71, 0.2, 1.01] }}
     >
       <AnimatePresence>{ContentSwitch(displayContent)}</AnimatePresence>
     </motion.div>
