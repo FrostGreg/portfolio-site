@@ -2,10 +2,10 @@
 
 import Image, { StaticImageData } from "next/image";
 
-import wordleImage from "../../public/wordle.png";
-import jobImage from "../../public/home.png";
-import reversiImage from "../../public/reversi.png";
-import wormsImage from "../../public/worms.png";
+import wordleImage from "../../public/wordle.webp";
+import jobImage from "../../public/home.webp";
+import reversiImage from "../../public/reversi.webp";
+import wormsImage from "../../public/worms.webp";
 
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
@@ -103,18 +103,13 @@ const ArticleContent = ({
         </AnimatePresence>
       </motion.ul>
     </div>
-    <motion.div
-      // initial={{ scaleX: 0.2 }}
-      // animate={{ scaleX: 1 }}
-      // transition={{ delay: 0.7 }}
-      className="project-image-wrapper"
-      aria-hidden
-    >
+    <motion.div className="project-image-wrapper" aria-hidden>
       <Image
         src={imageProps.src}
         alt={imageProps.alt}
         fill
         className="project-image"
+        priority
       />
     </motion.div>
   </motion.article>
