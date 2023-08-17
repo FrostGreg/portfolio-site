@@ -5,6 +5,8 @@ import { Montserrat } from "next/font/google";
 
 import { motion } from "framer-motion";
 
+import { container, item } from "./utils";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 type ExperienceArticleProps = {
@@ -24,13 +26,13 @@ const ExperienceArticle = ({
   bulletTwo,
   bulletThree,
 }: ExperienceArticleProps) => (
-  <article className="mt-4">
-    <motion.h3
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      className="job-title"
-    >
+  <motion.article
+    variants={container}
+    initial="hidden"
+    animate="show"
+    className="mt-4"
+  >
+    <motion.h3 variants={item} className="job-title">
       {`${title} `}
       {employer && (
         <a href={employer.link} target="_blank">
@@ -38,38 +40,15 @@ const ExperienceArticle = ({
         </a>
       )}
     </motion.h3>
-    <motion.p
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.6 }}
-      className={`date ${montserrat.className}`}
-    >
+    <motion.p variants={item} className={`date ${montserrat.className}`}>
       {date}
     </motion.p>
     <ul className="job-description list">
-      <motion.li
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-      >
-        {bulletOne}
-      </motion.li>
-      <motion.li
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-      >
-        {bulletTwo}
-      </motion.li>
-      <motion.li
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
-      >
-        {bulletThree}
-      </motion.li>
+      <motion.li variants={item}>{bulletOne}</motion.li>
+      <motion.li variants={item}>{bulletTwo}</motion.li>
+      <motion.li variants={item}>{bulletThree}</motion.li>
     </ul>
-  </article>
+  </motion.article>
 );
 
 const ExperienceContent = () => {

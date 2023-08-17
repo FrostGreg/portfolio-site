@@ -4,6 +4,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 import { motion } from "framer-motion";
 
+import { container, item } from "./utils";
+
 type LinkProp = {
   href: string;
   children: JSX.Element | string;
@@ -37,93 +39,69 @@ const AboutContent = () => {
           <div className="divider right-divider"></div>
         </div>
       </div>
-      <motion.p
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="pb-6"
-      >
-        Hey there!
-        <span className="text-2xl desktop waving" aria-hidden>
-          👋🏻
-        </span>{" "}
-        My name is Gregory, and I&apos;m a computer science student at the{" "}
-        <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
-          University of Nottingham
-        </Link>
-        . I&apos;m currently completing a placement year at{" "}
-        <Link href="https://jobs.capitalone.co.uk/earlycareers#tabs-2">
-          Capital One
-        </Link>{" "}
-        as a web developer, where I&apos;ve been working with technologies like
-        React, TypeScript, and Node.
-      </motion.p>
-      <motion.p
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-        className="pb-6"
-      >
-        Some quick fire interests of mine:
-      </motion.p>
-      <motion.ul
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        className="pb-6 grid columns-2 emoji-list"
-      >
-        <li className="col-start-1">
-          <span aria-hidden className="erupt">
-            🌋
+      <motion.div variants={container} initial="hidden" animate="show">
+        <motion.p variants={item} className="pb-6">
+          Hey there!
+          <span className="text-2xl desktop waving" aria-hidden>
+            👋🏻
           </span>{" "}
-          Lord of the Rings
-        </li>
-        <li className="col-start-2">
-          <span aria-hidden>🎧</span> Music
-        </li>
-        <li className="col-start-1">
-          <span aria-hidden>🕹️</span> Video games
-        </li>
-        <li className="col-start-2">
-          <span aria-hidden>⌚</span> Watches
-        </li>
-      </motion.ul>
-      <motion.p
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
-        className="pb-6"
-      >
-        Recently, I&apos;ve been brushing up my web development skills by taking
-        courses from{" "}
-        <Link href="https://frontendmasters.com/">FrontEndMasters</Link>, one of
-        the projects I&apos;ve been working on is creating a{" "}
-        <Link href="https://frontendmasters.com/courses/production-next/">
-          Next.js application
-        </Link>{" "}
-        that allows users to create, store, and edit notes with the added
-        convenience of Github sign in.
-      </motion.p>
-      <motion.p
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.4 }}
-      >
-        Here are a few technologies I&apos;ve been working with recently:
-      </motion.p>
-      <motion.ul
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.6 }}
-        className={`pt-6 ${montserrat.className} list`}
-      >
-        <li>Javascript (ES6+)</li>
-        <li>React</li>
-        <li className="py-2">Node.js</li>
-        <li className="py-2">TypeScript</li>
-        <li>Styled Components</li>
-        <li>Cypress</li>
-      </motion.ul>
+          My name is Gregory, and I&apos;m a computer science student at the{" "}
+          <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
+            University of Nottingham
+          </Link>
+          . I&apos;m currently completing a placement year at{" "}
+          <Link href="https://jobs.capitalone.co.uk/earlycareers#tabs-2">
+            Capital One
+          </Link>{" "}
+          as a web developer, where I&apos;ve been working with technologies
+          like React, TypeScript, and Node.
+        </motion.p>
+        <motion.p variants={item} className="pb-6">
+          Some quick fire interests of mine:
+        </motion.p>
+        <motion.ul variants={item} className="pb-6 grid columns-2 emoji-list">
+          <li className="col-start-1">
+            <span aria-hidden className="erupt">
+              🌋
+            </span>{" "}
+            Lord of the Rings
+          </li>
+          <li className="col-start-2">
+            <span aria-hidden>🎧</span> Music
+          </li>
+          <li className="col-start-1">
+            <span aria-hidden>🕹️</span> Video games
+          </li>
+          <li className="col-start-2">
+            <span aria-hidden>⌚</span> Watches
+          </li>
+        </motion.ul>
+        <motion.p variants={item} className="pb-6">
+          Recently, I&apos;ve been brushing up my web development skills by
+          taking courses from{" "}
+          <Link href="https://frontendmasters.com/">FrontEndMasters</Link>, one
+          of the projects I&apos;ve been working on is creating a{" "}
+          <Link href="https://frontendmasters.com/courses/production-next/">
+            Next.js application
+          </Link>{" "}
+          that allows users to create, store, and edit notes with the added
+          convenience of Github sign in.
+        </motion.p>
+        <motion.p variants={item}>
+          Here are a few technologies I&apos;ve been working with recently:
+        </motion.p>
+        <motion.ul
+          variants={item}
+          className={`pt-6 ${montserrat.className} list`}
+        >
+          <li>Javascript (ES6+)</li>
+          <li>React</li>
+          <li className="py-2">Node.js</li>
+          <li className="py-2">TypeScript</li>
+          <li>Styled Components</li>
+          <li>Cypress</li>
+        </motion.ul>
+      </motion.div>
     </motion.div>
   );
 };
