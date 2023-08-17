@@ -1,7 +1,6 @@
 import { Montserrat } from "next/font/google";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInbox } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+
+import "../../public/fontello/css/fontello.css";
 
 import { motion } from "framer-motion";
 
@@ -47,10 +46,10 @@ const ContactContent = () => {
             href="mailto:frost.computing21@gmail.com"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faInbox} />
+            <i className="icon-inbox" />
           </motion.a>
           <a href="https://github.com/FrostGreg" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
+            <i className="icon-github-circled" />
           </a>
           <motion.a
             initial={{ x: -100, opacity: 0 }}
@@ -59,7 +58,7 @@ const ContactContent = () => {
             href="https://linkedin.com/in/gregory-frost"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faLinkedin} />
+            <i className="icon-linkedin-squared" />
           </motion.a>
         </div>
         <motion.p
