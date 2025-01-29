@@ -45,16 +45,14 @@ const AboutContent = () => {
           <span className="text-2xl desktop waving" aria-hidden>
             👋🏻
           </span>{" "}
-          My name is Gregory, and I&apos;m a computer science student at the{" "}
+          My name is Gregory, and I&apos;m a graduate software engineer at{" "}
+          <Link href="https://www.capitalone.co.uk/">Capital One</Link>{" "}
+          currently spending time in a back end services team using Java and
+          AWS. I previously studied computer science student at the{" "}
           <Link href="https://www.nottingham.ac.uk/ugstudy/course/Computer-Science-with-Year-in-Industry-BSc">
             University of Nottingham
-          </Link>
-          . I&apos;m currently completing a placement year at{" "}
-          <Link href="https://jobs.capitalone.co.uk/earlycareers#tabs-2">
-            Capital One
           </Link>{" "}
-          as a web developer, where I&apos;ve been working with technologies
-          like React, TypeScript, and Node.
+          and graduated in summer 2024 🧑‍🎓.
         </motion.p>
         <motion.p variants={item} className="pb-6">
           Some quick fire interests of mine:
@@ -98,8 +96,6 @@ const AboutContent = () => {
           <li>React</li>
           <li className="py-2">Node.js</li>
           <li className="py-2">TypeScript</li>
-          <li>Styled Components</li>
-          <li>Cypress</li>
         </motion.ul>
       </motion.div>
     </motion.div>
