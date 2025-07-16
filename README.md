@@ -4,7 +4,7 @@
 
 A portfolio site showing off a bit about me and some of the projects I have worked on.
 
-Visit this <a href="https://greg-frost-portfolio.vercel.app/" target="_blank">webpage</a>
+Visit this <a href="https://greg-frost-portfolio.vercel.app/" target="_blank">webpage</a>.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
